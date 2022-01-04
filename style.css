@@ -1,0 +1,140 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+   td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  /* tr:nth-child(even) {
+    background-color: #dddddd;
+  } */
+
+
+.inputhandle{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+.eventtitlediv{
+display: flex;
+justify-content: center;
+}
+.eventtitlebox{
+width: 320px;
+height: 40px;
+background: #FFF8E5;
+border: 1px solid rgba(0, 0, 0, 0.05);
+box-sizing: border-box;
+border-radius: 10px;
+}
+.addeventtitlebutton{
+width: 124px;
+height: 36px;
+
+background: #00A19D;
+border-radius: 5px;
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 20px;
+
+color: #FFF8E5;
+}
+.buttondiv{
+display: flex;
+justify-content: center;
+padding-top: 10px;
+}
+.logo{
+height: 50px;
+width: auto;
+}
+.tableEvent{
+padding-top: 20px;
+}
+a{
+    text-decoration: none;
+    color: #2F3A8F;
+}
+
+#alreadyexistevent{
+text-align: center;
+ color: #9B0000;
+}
+
+.hide{
+    display:  none;
+    /* visibility: hidden!important; */
+}
+.invisible{
+    visibility: visible!important;
+}
+
+
+.khrocdiv{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.khrocdiv>input{
+     padding: 10px;
+     margin-top: 5px;
+     background: #FFF8E5;
+border: 1px solid rgba(0, 0, 0, 0.05);
+box-sizing: border-box;
+border-radius: 10px;
+}
+ 
+
+.khrocdiv>.buttonkhrocdiv{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.jomardiv{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.jomardiv>.jomabuttondiv{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+
+.jomardiv>input{
+    padding: 10px;
+    margin-top: 5px;
+    background: #FFF8E5;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+box-sizing: border-box;
+border-radius: 10px;
+}
+.buttonkhrocdiv>button ,.jomabuttondiv>button{
+    width: 124px;
+    height: 36px;
+    
+    background: #00A19D;
+    border-radius: 5px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    
+    color: #FFF8E5
+}
+
+h1{
+    font-size: 20px;
+    text-align: center;
+    /* padding-bottom: 25px;
+    border-bottom: 1px solid rgba(189, 189, 189, 0.836); */
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <title>Document</title>
+    <!-- <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+         td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style> -->
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Joma</h1>
+  <div class="jomardiv">
+    
+    <input type="text" name="" id="j_name" placeholder="Name">
+    <input type="text" name="" id="j_taka"  placeholder="Taka">
+    <input type="text" name="" id="j_comment"   placeholder="Comment">
+    <div class="jomabuttondiv">
+      <button onclick="AddJoma()">Add Joma</button>
+    </div>
+  
+  </div>
+
+    <h1>khoroc</h1>
+     
+    <div class="khrocdiv">
+      <input type="text" name="" id="k_title" placeholder="Title">
+      <input type="text" name="" id="k_unit"  placeholder="Unit">
+      <input type="text" name="" id="k_taka"   placeholder="Unit Price">
+      <div class="buttonkhrocdiv">
+        <button onclick="AddKhoroc()">Add Khoroc</button>
+      </div>
+
+    </div>
+
+    <h1>Total Hisab Table</h1>
+
+    <div class="table">
+        <table id="hisabtable">
+            <!-- <tr>
+              <th>Title</th>
+              <th>Unit</th>
+              <th>Unit Price</th>
+              <th>Total Price</th>
+              <th>Delete</th>
+            </tr> -->
+            <tr>
+              <td>Total Joma</td>
+              <td id="totaljoma">0</td>
+            </tr>
+            <tr>
+              <td>Total Khoroc</td>
+              <td id="totalkhoroc">0</td>
+            </tr>
+            <tr>
+              <td >Baki Ache</td>
+              <td id="lefttaka">0</td>
+            </tr>
+            </table>    
+    </div>
+
+
+<h1>Khoroc Table</h1>
+
+<div class="table">
+    <table id="khoroctable">
+        <tr>
+          <th>Title</th>
+          <th>Unit</th>
+          <th>Unit Price</th>
+          <th>Total Price</th>
+          <th>Delete</th>
+        </tr>
+        </table>    
+</div>
+
+
+
+
+
+<h1>Joma Table</h1>
+
+<div class="table">
+    <table id="jomatable">
+        <tr>
+          <th>Name</th>
+          <th>Comment</th>
+        
+          <th>Taka</th>
+          <th>Delete</th>
+        </tr>
+           
+          
+      </table>
+      
+
+  
+      
+</div>
+
+  <script>
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const id = urlParams.get('id');
+
+
+const AddKhoroc = () =>{
+    var k_title = document.querySelector("#k_title").value;
+    var k_unit = document.querySelector("#k_unit").value;
+    var k_taka = document.querySelector("#k_taka").value;
+  var alreadyExist =   JSON.parse(localStorage.getItem("eventtitle"))?JSON.parse(localStorage.getItem("eventtitle")):"";
+ 
+var checkIfexist =typeof alreadyExist[id].spent == "undefined"? "":alreadyExist[id].spent;
+var checkIfexistdebit = typeof alreadyExist[id].debit == "undefined"? "":alreadyExist[id].debit;
+
+console.log(checkIfexist );
+console.log(checkIfexist);
+var addNewItem = {
+        ...alreadyExist,
+        [id]:{
+            debit:[...checkIfexistdebit],
+            spent:[
+...checkIfexist,
+{
+    k_title:k_title,
+    k_unit:k_unit,
+    k_taka:k_taka
+}
+        ]}       
+}
+ localStorage.setItem("eventtitle",  JSON.stringify(addNewItem));
+//  $("#jomatable").append('<tr> <td>'+j_name+'</td> <td>'+j_comment+'</td> <td>'+j_taka+'</td> <td><button onclick="DeleteDebitHandler(this)" id='+debit.indexOf(i)+' title="debit" >Delete</button></td>  </tr>');
+tableShow();
+
+}
+
+
+
+
+const AddJoma = () =>{
+    var j_name = document.querySelector("#j_name").value;
+    var j_taka = document.querySelector("#j_taka").value;
+    var j_comment = document.querySelector("#j_comment").value;
+  var alreadyExist =   JSON.parse(localStorage.getItem("eventtitle"))?JSON.parse(localStorage.getItem("eventtitle")):"";
+ 
+var checkIfexist =typeof alreadyExist[id].debit == "undefined"? "":alreadyExist[id].debit;
+var checkIfexistspent =typeof alreadyExist[id].spent == "undefined"? "":alreadyExist[id].spent;
+
+console.log(checkIfexist );
+console.log(checkIfexist);
+var addNewItem = {
+        ...alreadyExist,
+        [id]:{
+            spent:[
+                ...checkIfexistspent
+        ]
+           
+            ,debit:[
+...checkIfexist,
+{
+    j_name:j_name,
+    j_taka:j_taka,
+    j_comment:j_comment
+}
+        ]}
+         
+}
+ localStorage.setItem("eventtitle",  JSON.stringify(addNewItem));
+  // $(".jomatable").append('<tr> <td>'+j_name+'</td> <td>'+j_comment+'</td> <td>'+j_taka+'</td>   </tr>');
+  tableShow();
+}
+
+
+const DeleteDebitHandler = (e) =>{
+  var alreadyExist =   JSON.parse(localStorage.getItem("eventtitle"))?JSON.parse(localStorage.getItem("eventtitle")):"";
+  var debit = alreadyExist[id].debit;
+  
+   debit.splice( e.id, 1 );
+ var checkIfexist =typeof alreadyExist[id].debit == "undefined"? "":alreadyExist[id].debit;
+ var checkIfexistspent =typeof alreadyExist[id].spent == "undefined"? "":alreadyExist[id].spent;
+  var addNewItem = {
+         ...alreadyExist,
+         [id]:{
+             spent:[
+                 ...checkIfexistspent
+         ]
+            
+             ,debit:[
+ ...debit
+         ]}
+          
+ }
+  localStorage.setItem("eventtitle",  JSON.stringify(addNewItem));
+  e.parentElement.parentElement.remove()
+}
+
+
+const DeleteSpentHandler=(e)=>{
+  var alreadyExist =   JSON.parse(localStorage.getItem("eventtitle"))?JSON.parse(localStorage.getItem("eventtitle")):"";
+  var spent = alreadyExist[id].spent;
+  
+   spent.splice( e.id, 1 );
+ var checkIfexist =typeof alreadyExist[id].debit == "undefined"? "":alreadyExist[id].debit;
+//  var checkIfexistspent =typeof alreadyExist[id].spent == "undefined"? "":alreadyExist[id].spent;
+  var addNewItem = {
+         ...alreadyExist,
+         [id]:{
+             spent:[
+                 ...spent
+         ]
+            
+             ,debit:[
+ ...checkIfexist
+         ]}
+          
+ }
+  localStorage.setItem("eventtitle",  JSON.stringify(addNewItem));
+
+  e.parentElement.parentElement.remove()
+}
+
+
+
+
+const tableShow = () =>{
+  var spent = JSON.parse(localStorage.getItem("eventtitle"))[id].spent;
+ var totalpricekhoroc=0;
+ var khorocstring = "";
+  spent.forEach(i => {
+     khorocstring+='<tr> <td>'+i.k_title+'</td> <td>'+i.k_unit+'</td> <td>'+i.k_taka+'</td>  <td>' +  (parseInt(i.k_unit) *  parseInt(i.k_taka)) +'</td> <td><button onclick="DeleteSpentHandler(this)" id='+spent.indexOf(i)+' title="spent">Delete</button></td> </tr>';
+     totalpricekhoroc+=(parseInt(i.k_unit) *  parseInt(i.k_taka));
+ 
+});
+
+$("#khoroctable").html('<tr><th>Title</th> <th>Unit</th> <th>Unit Price</th> <th>Total Price</th>  <th>Delete</th> </tr>' + khorocstring + '<tr><td></td> <td></td> <td></td><td id="totalprice">'+totalpricekhoroc+'</td><td></td> </tr');
+//  $("#totalprice").html(totalprice);
+
+
+ var debit = JSON.parse(localStorage.getItem("eventtitle"))[id].debit;
+ var totalpricejoma=0;
+ var jomastring = "";
+ debit.forEach(i => {
+  jomastring += '<tr> <td>'+i.j_name+'</td> <td>'+i.j_comment+'</td> <td>'+i.j_taka+'</td> <td><button onclick="DeleteDebitHandler(this)" id='+debit.indexOf(i)+' title="debit" >Delete</button></td>  </tr>'
+    // $("#jomatable").append('<tr> <td>'+i.j_name+'</td> <td>'+i.j_comment+'</td> <td>'+i.j_taka+'</td> <td><button onclick="DeleteDebitHandler(this)" id='+debit.indexOf(i)+' title="debit" >Delete</button></td>  </tr>');
+    totalpricejoma+= parseInt(i.j_taka)  ;
+    console.log(i.j_taka)
+ 
+});
+$("#jomatable").html(' <tr><th>Name</th><th>Comment</th> <th>Taka</th> <th>Delete</th> </tr>' + jomastring + '<tr><td></td> <td></td> <td></td><td id="totalprice">'+totalpricejoma+'</td></tr');
+   $("#totaljoma").html(totalpricejoma);
+
+   $("#totalkhoroc").html(totalpricekhoroc);
+   $("#lefttaka").html(totalpricejoma-totalpricekhoroc);
+
+}
+tableShow();
+
+    </script>
+
+
+<script src="script.js"></script>
+</body>
+</html>

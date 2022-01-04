@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+     
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="logo">
+    HisaB
+  </div>
+  <p id="alreadyexistevent" class="hide">Already Exist</p>
+<div class="inputhandle">
+  <div class="eventtitlediv">
+    <input class="eventtitlebox" type="text" name="" id="eventtitle">
+  </div>
+ 
+ <div class="buttondiv">
+  <button class="addeventtitlebutton" onclick="AddAnEvent()">Add</button>
+ </div>
+
+</div>
+
+ 
+    <div class="tableEvent">
+      <table id="eventtable">
+          <tr>
+            <th>Event Name</th>
+            <th>View</th>
+          </tr>
+        </table>
+    </div>
+    
+
+  <script src="script.js"></script>
+
+  <script>
+ var event =  JSON.parse(localStorage.getItem("eventtitle"));
+ Object.keys(event).forEach(i => {
+  $("#eventtable").append('<tr> <td>'+i+'</td>  <td><a href=/ok.html?id='+i+'>view</a></td></tr>');
+  
+ });
+ </script>
+</body>
+</html>
