@@ -12,7 +12,7 @@ const AddAnEvent = () =>{
      if(!document.getElementById("alreadyexistevent").classList.contains("hide") ){
         document.getElementById("alreadyexistevent").classList.add("hide")  ;
     }
-    $("#eventtable").append('<tr> <td>'+title+'</td>  <td><a href=/eventmanage/event.html?id='+title+'>view</a></td></tr>');
+    $("#eventtable").append('<tr> <td>'+title+'</td>  <td><a href="/eventmanage/event.html?id='+title+'">view</a></td></tr>');
     }else{
         if(document.getElementById("alreadyexistevent").classList.contains("hide") ){
             document.getElementById("alreadyexistevent").classList.remove("hide")  

@@ -1,3 +1,8 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+} */
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -138,3 +143,19 @@ h1{
     /* padding-bottom: 25px;
     border-bottom: 1px solid rgba(189, 189, 189, 0.836); */
 }
+
+body{
+  display: flex;
+    justify-content: center;  
+   
+}
+ 
+body>.container{
+    width: 600px;
+        }
+@media only screen and (max-width: 600px) {
+   
+    body>.container{
+width:100%;
+    }
+  }
