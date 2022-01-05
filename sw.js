@@ -3,6 +3,9 @@ const cacheName = "pwa-share-api";
 const filesToCache = [
   "/",
   "index.html",
+  "event.html",
+  "script.js",
+  "style.css",
   "./js/index.js",
   "./styles/styles.css"
 ];

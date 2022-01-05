@@ -3,12 +3,12 @@
   "name": "Event Manage",
   "icons": [
     {
-      "src": "./icons/icon.png",
+      "src": "./icons/192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "./icons/icon.png",
+      "src": "./icons/512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
