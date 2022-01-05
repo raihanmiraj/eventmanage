@@ -22,7 +22,7 @@ if ("serviceWorker" in navigator) {
     console.log("[ServiceWorker**] - Registered");
     sw = swRegistered;
     // displayNotification();
-    document.querySelector("#share").addEventListener("click", onShare);
+    // document.querySelector("#share").addEventListener("click", onShare);
   });
 }
 
