@@ -21,7 +21,7 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js").then(swRegistered => {
     console.log("[ServiceWorker**] - Registered");
     sw = swRegistered;
-    displayNotification();
+    // displayNotification();
     document.querySelector("#share").addEventListener("click", onShare);
   });
 }
