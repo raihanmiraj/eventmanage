@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Create and Save text file in JavaScript</title>
+    <script src="js/FileSaver.js"></script>
+    <script>
+
+		function saveDynamicDataToFile() {
+    var userInput =  localStorage.getItem("eventtitle");
+			 var blob = new Blob([userInput], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, "dynamic.txt");
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Download BackUp</h1>
+
+  <button type="button" onclick="saveDynamicDataToFile();">BackUp Download</button>
+
+  <h1>Upload BackUp File</h1>
+
+  <input type="file" name="inputfile"
+  id="inputfile">
+<br>
+
+<h1 style="color: red;" id="output"></h1>
+
+<script type="text/javascript">
+document.getElementById('inputfile')
+  .addEventListener('change', function() {
+    
+  var fr=new FileReader();
+  fr.onload=function(){
+      document.getElementById('output').innerHTML="Success"
+              // .textContent=fr.result;
+    localStorage.setItem("eventtitle",fr.result);
+  }
+    
+  fr.readAsText(this.files[0]);
+})
+
+
+
+</script>
+<a href="index.html">Back to Home Page</a>	
+</body>
+</html>

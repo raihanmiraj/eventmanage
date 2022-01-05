@@ -6,6 +6,8 @@ const filesToCache = [
   "event.html",
    "script.js",
   "style.css",
+  "backup.html",
+  "./js/FileSaver.js",
   "./js/index.js",
   "./styles/styles.css"
 ];
