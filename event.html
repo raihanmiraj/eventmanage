@@ -147,7 +147,7 @@ var addNewItem = {
  localStorage.setItem("eventtitle",  JSON.stringify(addNewItem));
 //  $("#jomatable").append('<tr> <td>'+j_name+'</td> <td>'+j_comment+'</td> <td>'+j_taka+'</td> <td><button onclick="DeleteDebitHandler(this)" id='+debit.indexOf(i)+' title="debit" >Delete</button></td>  </tr>');
 tableShow();
-
+document.querySelector("#k_title").value = "";
 }
 
 
@@ -184,6 +184,7 @@ var addNewItem = {
  localStorage.setItem("eventtitle",  JSON.stringify(addNewItem));
   // $(".jomatable").append('<tr> <td>'+j_name+'</td> <td>'+j_comment+'</td> <td>'+j_taka+'</td>   </tr>');
   tableShow();
+  document.querySelector("#j_name").value = "";
 }
 
 

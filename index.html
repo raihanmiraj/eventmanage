@@ -45,7 +45,7 @@
           <tr>
             <th>Event Name</th>
             <th>View</th>
-          </tr>
+           </tr>
         </table>
     </div>
     
@@ -55,7 +55,7 @@
   <script>
  var event =  JSON.parse(localStorage.getItem("eventtitle"));
  Object.keys(event).forEach(i => {
-  $("#eventtable").append('<tr> <td>'+i+'</td>  <td><a href=/event.html?id='+i+'>view</a></td></tr>');
+  $("#eventtable").append('<tr> <td>'+i+'</td> <td><a href=/event.html?id='+i+'>view</a></td></tr>');
   
  });
  </script>

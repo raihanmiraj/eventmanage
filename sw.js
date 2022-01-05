@@ -4,7 +4,7 @@ const filesToCache = [
   "/",
   "index.html",
   "event.html",
-  "script.js",
+   "script.js",
   "style.css",
   "./js/index.js",
   "./styles/styles.css"
