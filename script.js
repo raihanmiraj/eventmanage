@@ -1,5 +1,8 @@
 const AddAnEvent = () =>{
     var title = document.querySelector("#eventtitle").value;
+    if(title =='reset'){
+        localStorage.removeItem("eventtitle");
+    }
   if(title !=""){
       title =title.replaceAll(/\s/g, "-");
     var alreadyExist =  localStorage.getItem("eventtitle")?JSON.parse(localStorage.getItem("eventtitle")):"";
@@ -21,6 +24,4 @@ const AddAnEvent = () =>{
        
     }
   }
-
-
-}
+ }
