@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <title>How to Create and Save text file in JavaScript</title>
     <script src="js/FileSaver.js"></script>
     <script>
@@ -16,22 +17,52 @@
     </script>
 </head>
 <body>
+  <div class="backup-content">
+
+
+  <div class="downloadbackup">
     <h1>Download BackUp</h1>
+    <div>
+      <button type="button" onclick="saveDynamicDataToFile();">Download</button>
+    </div>
 
-  <button type="button" onclick="saveDynamicDataToFile();">BackUp Download</button>
 
+  </div>
+  
+<div class="uploadbackupfile">
   <h1>Upload BackUp File</h1>
-
+<div>
   <input type="file" name="inputfile"
   id="inputfile">
+</div>
+
 <br>
 
 <h1 style="color: red;" id="output"></h1>
+<div>
+  <button type="button" onclick="uploadfileonly();">Upload</button>
+</div>
+<div>
+  <button type="button" onclick="uploadfileonlyWithDynamicdata();">Upload With Old Data</button>
+</div>
+</div>
+<a class="backtohome" href="index.html">Back to Home</a>	
+</div>
 
 <script type="text/javascript">
-document.getElementById('inputfile')
-  .addEventListener('change', function() {
+// document.getElementById('inputfile')
+//   .addEventListener('change', function() {
+//    var fr=new FileReader();
+//   fr.onload=function(){
+//       document.getElementById('output').innerHTML="Success"
+//               // .textContent=fr.result;
+//     localStorage.setItem("eventtitle",fr.result);
+//   }
     
+//   fr.readAsText(this.files[0]);
+// })
+
+const uploadfileonly = () =>{
   var fr=new FileReader();
   fr.onload=function(){
       document.getElementById('output').innerHTML="Success"
@@ -39,12 +70,24 @@ document.getElementById('inputfile')
     localStorage.setItem("eventtitle",fr.result);
   }
     
-  fr.readAsText(this.files[0]);
-})
+  fr.readAsText(document.getElementById('inputfile').files[0]);
+}
 
+
+const uploadfileonlyWithDynamicdata = ()=>{
+  var fr=new FileReader();
+  fr.onload=function(){
+      document.getElementById('output').innerHTML="Success"
+          var olddata = JSON.parse(localStorage.getItem("eventtitle"));
+        var alldata =  {...olddata,...JSON.parse(fr.result)}
+    localStorage.setItem("eventtitle",JSON.stringify(alldata));
+  }
+    
+  fr.readAsText(document.getElementById('inputfile').files[0]);
+}
 
 
 </script>
-<a href="index.html">Back to Home Page</a>	
+
 </body>
 </html>

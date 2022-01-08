@@ -149,7 +149,70 @@ body{
     justify-content: center;  
    
 }
+
+.backup-content{
+    display: flex column;
+    align-items: center;
+    align-self: center;
+
+    /* justify-content: center; */
+}
+.downloadbackup>div{
+    display: flex;
+    justify-content: center;
+}
+.uploadbackupfile>div{
+    display: flex;
+    justify-content: center;
+ /* padding-left: 60px; */
+}
+
+.uploadbackupfile>div>button{
+    /* width: 100px; */
+    height: 25px;
+    margin: 5px;
+    
+    background: #00A19D;
+    border-radius: 5px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    
+    color: #FFF8E5
+}
  
+.backtohome{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+  background: #00A19D;
+    border-radius: 5px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    
+    color: #FFF8E5
+}
+ 
+.downloadbackup>div>button{
+    width: 124px;
+    height: 36px;
+    
+    background: #00A19D;
+    border-radius: 5px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    
+    color: #FFF8E5
+}
 body>.container{
     width: 600px;
         }
