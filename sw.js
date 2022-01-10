@@ -2,14 +2,14 @@
 const cacheName = "pwa-share-api";
 const filesToCache = [
   "/",
-  // "index.html",
-  // "event.html",
-  //  "script.js",
-  // "style.css",
-  // "backup.html",
-  // "./js/FileSaver.js",
-  // "./js/index.js",
-  // "./styles/styles.css"
+  "index.html",
+  "event.html",
+   "script.js",
+  "style.css",
+  "backup.html",
+  "./js/FileSaver.js",
+  "./js/index.js",
+  "./styles/styles.css"
 ];
 
 self.addEventListener("install", e => {
