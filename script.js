@@ -1,5 +1,7 @@
 const AddAnEvent = () =>{
     var title = document.querySelector("#eventtitle").value;
+    document.querySelector("#eventtitle").value = "";
+
     if(title =='reset'){
         localStorage.removeItem("eventtitle");
     }else if(title !=""){
